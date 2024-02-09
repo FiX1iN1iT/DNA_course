@@ -7,6 +7,7 @@
     height: 50px;                /* задаем высоту кнопки */
     border: none;                /* отключаем обводку */
     background: #EFD9CE;         /* задаем серый цвет кнопки */
+    color: green;
     font-size: 1.5rem;           /* увеличим размер шрифта */
     font-family: "Lucida Console", "Courier New", monospace;
     cursor: pointer;             /* при наведении на кнопку курсор будет изменен
