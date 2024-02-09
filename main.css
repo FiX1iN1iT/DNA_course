@@ -60,3 +60,23 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 15px;
   }
+
+  .parent {
+    /* position: relative; */
+    display: grid;
+    place-items: center;
+  }
+
+  .child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .child2 {
+    position: absolute;
+    bottom: 0%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+  }
