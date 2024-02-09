@@ -53,3 +53,10 @@
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 34px;
   }
+
+  .footer {
+    background: #98DFEA;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+  }
