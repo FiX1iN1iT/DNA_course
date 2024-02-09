@@ -10,6 +10,7 @@
     color: #ffffff;                /* задаем белый цвет текста внутри кнопки */
     font-size: 1.5rem;           /* увеличим размер шрифта */
     font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bold;
     cursor: pointer;             /* при наведении на кнопку курсор будет изменен
                                     со стрелки на 'указательный палец' */
     user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
