@@ -44,7 +44,7 @@
   /* селектор для поля вывода результата */
   .result { 
     width: 220px;
-    height: 50px;
+    height: 100px;
     margin-bottom: 15px;         /* отступ снизу */
     padding-right: 10px;         /* выступ справа */
     background: #EFD9CE; /* цвет можно задавать и таким образом */
