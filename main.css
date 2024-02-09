@@ -94,3 +94,12 @@
     background-color: #ffffff;
     color: #494949;
   }
+
+  .background-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('https://i.ytimg.com/vi/hY7m5jjJ9mM/hqdefault.jpg'); /* Замените 'your-image-url.jpg' на URL вашего изображения */
+    background-size: cover; /* Масштабирование изображения до заполнения контейнера */
+    background-position: center; /* Позиция изображения по центру */
+    background-repeat: no-repeat; /* Запрет повторения фонового изображения */
+  }
