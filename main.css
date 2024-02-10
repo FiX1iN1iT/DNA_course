@@ -1,134 +1,56 @@
-.my-btn {
-  margin-right: 5px;
-  margin-top: 5px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: #EFD9CE;
-  color: green;
-  font-size: 1.5rem;
-  font-family: "Lucida Console", "Courier New", monospace;
-  cursor: pointer;
-  user-select: none;
-}
 
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+  margin-right: 5px;           /* задаем отступ от кнопки справа */
+  margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+  width: 50px;                 /* задаем ширину кнопки */
+  height: 50px;                /* задаем высоту кнопки */
+  border-radius: 50%;          /* округляем кнопку */
+  border: none;                /* отключаем обводку */
+  background: #515151;         /* задаем серый цвет кнопки */
+  color: white;                /* задаем белый цвет текста внутри кнопки */
+  font-size: 1.5rem;           /* увеличим размер шрифта */
+  font-family: Arial, Helvetica, sans-serif; /* сменим шрифт */
+  cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                  со стрелки на 'указательный палец' */
+  user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+} 
+
+/* hover - это состояние элемента, когда на него наведен курсор */
 .my-btn:hover {
-  background: #ffa071;
+  background: darkgray; /* при наведение курсора на кнопку, она будет окрашена в серый */
 }
 
+/* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
 .my-btn:active {
-  filter: brightness(130%);
+  filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
 }
 
-.my-btn.primary {
-  background: #7B52AB;
+/* селектор для кнопок первостепенных операций */
+.my-btn.primary { 
+  background: #ff9801; /* цвет кнопки оранжевый */
 }
 
-.my-btn.secondary {
-  background: #98DFEA;
+/* селектор для кнопок второстепенных операций */
+.my-btn.secondary { 
+  background: #a6a6a6; /* цвет кнопки сервый */
 }
 
-.my-btn.execute {
-  width: 100px;
+/* селектор для кнопки расчета выражения (=) */
+.my-btn.execute { 
+  width: 100px;          /* сделаем кнопку шире других */
+  border-radius: 34px;   /* подкорректируем округлость */
 }
 
-.result {
+/* селектор для поля вывода результата */
+.result { 
   width: 220px;
-  height: 100px;
-  margin-bottom: 15px;
-  padding-right: 10px;
-  background: #EFD9CE;
-  text-align: right;
+  height: 50px;
+  margin-bottom: 15px;         /* отступ снизу */
+  padding-right: 10px;         /* выступ справа */
+  background: rgb(73, 73, 73); /* цвет можно задавать и таким образом */
+  text-align: right;           /* примагнитим текст к правой стороне */
+  color: #ffffff;              /* цвет текста белый */
   font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
-  border-radius: 34px;
 }
-
-.footer {
-  background: #98DFEA;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 15px;
-}
-
-.parent {
-  display: grid;
-  place-items: center;
-}
-
-.child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.child2 {
-  position: absolute;
-  bottom: 0%;
-}
-
-.child3 {
-  position: absolute;
-  top: 10%;
-  right: 0%;
-  transform: translate(-50%, -50%);
-}
-
-.dark-mode {
-  background-color: #494949;
-  color: #ffffff;
-}
-
-.body {
-  background-color: #ffffff;
-  color: #494949;
-}
-
-.background-container {
-  width: 100%;
-  height: 100vh;
-  background-image: url('https://i.ytimg.com/vi/hY7m5jjJ9mM/hqdefault.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  right: 0;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
