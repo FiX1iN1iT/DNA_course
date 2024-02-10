@@ -123,3 +123,8 @@ window.onload = function () {
         outputElement.innerHTML = a
     }
 };
+
+function toggleTheme() {
+    let body = document.body;
+    body.classList.toggle("dark-mode");
+}
