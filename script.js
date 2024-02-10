@@ -119,6 +119,19 @@ window.onload = function () {
         }
     }
 
+    // кнопка возведения в квадрат
+    document.getElementById("btn_op_square").onclick = function () {
+        if (!selectedOperation) {
+            if (a === '') return;
+                a = (parseFloat(a) * parseFloat(a)).toString();
+                outputElement.innerHTML = a;
+        } else {
+            if (b === '') return;
+                b = (parseFloat(b) * parseFloat(b)).toString();
+                outputElement.innerHTML = b;
+        }
+    }
+
     // кнопка расчёта результата
     document.getElementById("btn_op_equal").onclick = function () {
         if (a === '' || b === '' || !selectedOperation)
