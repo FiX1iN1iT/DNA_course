@@ -43,9 +43,10 @@ export class MainPage {
 
     clickCard(e) {
         const cardId = e.target.dataset.id
+        const data = this.getData()
     
-        const productPage = new ProductPage(this.parent, cardId)
-        productPage.render()
+        const productPage = new ProductPage(this.parent)
+        productPage.render(data[cardId - 1])
     }
         
     render() {

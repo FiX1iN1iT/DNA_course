@@ -3,18 +3,8 @@ import {BackButtonComponent} from "../../components/back-button/index.js";
 import {MainPage} from "../main/index.js";
 
 export class ProductPage {
-    constructor(parent, id) {
+    constructor(parent) {
         this.parent = parent
-        this.id = id
-    }
-
-    getData() {
-        return {
-            id: 1,
-            src: "https://i.pinimg.com/originals/c9/ea/65/c9ea654eb3a7398b1f702c758c1c4206.jpg",
-            title: `Акция ${this.id}`,
-            text: "Такой акции вы еще не видели"
-        }
     }
 
     get pageRoot() {
@@ -34,7 +24,7 @@ export class ProductPage {
         mainPage.render()
     }
     
-    render() {
+    render(data) {
         this.parent.innerHTML = ''
         const html = this.getHTML()
         this.parent.insertAdjacentHTML('beforeend', html)
@@ -42,7 +32,6 @@ export class ProductPage {
         const backButton = new BackButtonComponent(this.pageRoot)
         backButton.render(this.clickBack.bind(this))
     
-        const data = this.getData()
         const stock = new ProductComponent(this.pageRoot)
         stock.render(data)
     }
