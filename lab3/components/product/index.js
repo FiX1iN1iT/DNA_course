@@ -15,6 +15,7 @@ export class ProductComponent {
                             <div class="card-body">
                                 <h5 class="card-title">${data.title}</h5>
                                 <p class="card-text">${data.text}</p>
+                                <button class="btn btn-primary" id="showToastBtn">Бесплатные деньги</button>
                             </div>
                         </div>
                     </div>
@@ -26,5 +27,21 @@ export class ProductComponent {
     render(data) {
         const html = this.getHTML(data)
         this.parent.insertAdjacentHTML('beforeend', html)
+
+        const showToastBtn = document.getElementById('showToastBtn');
+        showToastBtn.addEventListener('click', () => {
+            this.showToast();
+        });
+    }
+
+    showToast() {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = '<div class="toast-body">Шутка</div>';
+        document.body.appendChild(toast);
+
+        const bootstrapToast = new bootstrap.Toast(toast);
+
+        bootstrapToast.show();
     }
 }
