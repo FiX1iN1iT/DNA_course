@@ -61,6 +61,12 @@
   right: 16px;
 }
 
+.topright-next {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+}
+
 .container {
   position: relative;
 }
@@ -68,4 +74,8 @@
 .dark-mode {
   background-color: #494949;
   color: #ffffff;
+}
+
+.dark-theme {
+  background: #ff9801;
 }

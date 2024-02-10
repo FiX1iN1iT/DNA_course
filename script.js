@@ -207,3 +207,8 @@ function toggleTheme() {
     let body = document.body;
     body.classList.toggle("dark-mode");
 }
+
+function toggleResultTheme() {
+    let result = document.getElementById("result");
+    result.classList.toggle("dark-theme");
+}
