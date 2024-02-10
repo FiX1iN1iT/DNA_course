@@ -83,7 +83,7 @@ window.onload = function () {
         outputElement.innerHTML = b;
     }
 
-    // кнопка кнопка стирания введенной цифры назад
+    // кнопка стирания введенной цифры назад
     document.getElementById("btn_op_backspace").onclick = function () {
         if (!selectedOperation) {
             if (a === '') return;
@@ -93,6 +93,29 @@ window.onload = function () {
             if (b === '') return;
             b = b.slice(0, -1);
             outputElement.innerHTML = b;
+        }
+    }
+
+    // кнопка вычисления квадратного корня
+    document.getElementById("btn_op_sqrt").onclick = function () {
+        if (!selectedOperation) {
+            if (a === '') return;
+
+            if (parseFloat(a) < 0) {
+                outputElement.innerHTML = "Ошибка";
+            } else {
+                a = Math.sqrt(parseFloat(a)).toString();
+                outputElement.innerHTML = a;
+            }
+        } else {
+            if (b === '') return;
+
+            if (parseFloat(b) < 0) {
+                outputElement.innerHTML = "Ошибка";
+            } else {
+                b = Math.sqrt(parseFloat(b)).toString();
+                outputElement.innerHTML = b;
+            }
         }
     }
 
