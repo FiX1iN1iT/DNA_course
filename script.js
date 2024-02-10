@@ -132,6 +132,36 @@ window.onload = function () {
         }
     }
 
+    // кнопка вычисления факториала
+    document.getElementById("btn_op_fact").onclick = function () {
+        if (!selectedOperation) {
+            if (a === '') return;
+                if ((Number.isInteger(parseFloat(a)) && parseFloat(a) >= 0) === false) {
+                    outputElement.innerHTML = "Ошибка";
+                    return
+                }
+                a = factorial(parseFloat(a)).toString();
+                outputElement.innerHTML = a;
+        } else {
+            if (b === '') return;
+                if ((Number.isInteger(parseFloat(b)) && parseFloat(b) >= 0) === false) {
+                    outputElement.innerHTML = "Ошибка";
+                    return
+                }
+                b = factorial(parseFloat(b)).toString();
+                outputElement.innerHTML = b;
+        }
+    }
+
+    function factorial(n) {
+        if (n === 0 || n === 1)
+            return 1;
+        for (let i = n - 1; i >= 1; i--) {
+            n *= i;
+        }
+        return n;
+    }
+
     // кнопка расчёта результата
     document.getElementById("btn_op_equal").onclick = function () {
         if (a === '' || b === '' || !selectedOperation)
