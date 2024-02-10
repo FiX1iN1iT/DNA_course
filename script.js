@@ -153,6 +153,19 @@ window.onload = function () {
         }
     }
 
+    // кнопка добавления трех нулей
+    document.getElementById("btn_op_zeros").onclick = function () {
+        if (!selectedOperation) {
+            if (a == 0) return
+            a += "000"
+            outputElement.innerHTML = a
+        } else {
+            if (b == 0) return
+            b += "000"
+            outputElement.innerHTML = b
+        }
+    }
+
     function factorial(n) {
         if (n === 0 || n === 1)
             return 1;
