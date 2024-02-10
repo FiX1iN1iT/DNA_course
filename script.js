@@ -83,6 +83,19 @@ window.onload = function () {
         outputElement.innerHTML = b;
     }
 
+    // кнопка кнопка стирания введенной цифры назад
+    document.getElementById("btn_op_backspace").onclick = function () {
+        if (!selectedOperation) {
+            if (a === '') return;
+            a = a.slice(0, -1);
+            outputElement.innerHTML = a;
+        } else {
+            if (b === '') return;
+            b = b.slice(0, -1);
+            outputElement.innerHTML = b;
+        }
+    }
+
     // кнопка расчёта результата
     document.getElementById("btn_op_equal").onclick = function () {
         if (a === '' || b === '' || !selectedOperation)
