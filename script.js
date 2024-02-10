@@ -74,6 +74,15 @@ window.onload = function () {
         }
     }
 
+    // кнопка вычисления процента
+    document.getElementById("btn_op_percent").onclick = function () {
+        if (a === '' || b === '') return;
+
+        const percent = parseFloat(b) / 100;
+        b = percent.toString();
+        outputElement.innerHTML = b;
+    }
+
     // кнопка расчёта результата
     document.getElementById("btn_op_equal").onclick = function () {
         if (a === '' || b === '' || !selectedOperation)
