@@ -11,6 +11,12 @@ export class ProductPage {
         return document.getElementById('product-page')
     }
 
+    getData() {
+        ajax.post(urls.getUserInfo(this.id), (data) => {
+            this.renderData(data.response)
+        })
+    }
+
     getHTML() {
         return (
             `
@@ -23,16 +29,20 @@ export class ProductPage {
         const mainPage = new MainPage(this.parent)
         mainPage.render()
     }
+
+    renderData(item) {
+        const product = new ProductComponent(this.pageRoot)
+        product.render(item[0])
+    }
     
-    render(data) {
+    render() {
         this.parent.innerHTML = ''
         const html = this.getHTML()
         this.parent.insertAdjacentHTML('beforeend', html)
     
         const backButton = new BackButtonComponent(this.pageRoot)
         backButton.render(this.clickBack.bind(this))
-    
-        const stock = new ProductComponent(this.pageRoot)
-        stock.render(data)
+        
+        this.getData()
     }
 }
