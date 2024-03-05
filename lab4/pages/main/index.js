@@ -1,4 +1,5 @@
 import { ProductCardComponent } from "../../components/product-card/index.js";
+import { SelectComponent } from "../../components/select/index.js";
 import { ProductPage } from "../product/index.js";
 import { ajax } from "../../modules/ajax.js";
 import { urls } from "../../modules/urls.js";
@@ -17,12 +18,7 @@ export class MainPage {
         return (
             `
                 <div id="main-page" class="d-flex flex-wrap">
-                    <select class="form-select" onchange="this.handleSelection(this)" aria-label="Пример выбора по умолчанию">
-                        <option selected>Откройте это меню выбора</option>
-                        <option value="1">chat1</option>
-                        <option value="2">chat2</option>
-                        <option value="3">chat3</option>
-                    </select>
+
                 <div/>
             `
         )
@@ -43,7 +39,7 @@ export class MainPage {
 
     getData(peerId) {
         ajax.post(urls.getConversationMembers(peerId), (data) => {
-            this.renderData(data.response.items)
+            this.renderData(data.response.profiles)
         })
     }
 
@@ -62,10 +58,27 @@ export class MainPage {
         })
     }
 
+    onChange() {
+        let selector = document.getElementById("myselector");
+        let newId = startId + Number(selector.value);
+
+        this.parent.innerHTML = ''
+        const html = this.getHTML()
+        this.parent.insertAdjacentHTML('beforeend', html)
+
+        const mySelector = new SelectComponent(this.pageRoot)
+        mySelector.render(this.onChange.bind(this))
+
+        this.getData(newId)
+    }
+
     render() {
         this.parent.innerHTML = ''
         const html = this.getHTML()
         this.parent.insertAdjacentHTML('beforeend', html)
+
+        const mySelector = new SelectComponent(this.pageRoot)
+        mySelector.render(this.onChange.bind(this))
 
         this.getData(defaultId)
     }
