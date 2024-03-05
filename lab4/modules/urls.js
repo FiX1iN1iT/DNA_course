@@ -13,6 +13,10 @@ class Urls {
     getGroupMembers(groupId) {
         return `${this.url}/groups.getMembers?group_id=${groupId}&fields=photo_400_orig&${this.commonInfo}`
     }
+
+    getConversationMembers(peerId) {
+        return `${this.url}/messages.getConversationMembers?peer_id=${peerId}&fields=photo_400_orig&${this.commonInfo}`
+    }
 }
 
 export const urls = new Urls()
