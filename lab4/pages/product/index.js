@@ -1,10 +1,13 @@
 import {ProductComponent} from "../../components/product/index.js";
 import {BackButtonComponent} from "../../components/back-button/index.js";
 import {MainPage} from "../main/index.js";
+import { ajax } from "../../modules/ajax.js";
+import { urls } from "../../modules/urls.js";
 
 export class ProductPage {
-    constructor(parent) {
+    constructor(parent, id) {
         this.parent = parent
+        this.id = id
     }
 
     get pageRoot() {
