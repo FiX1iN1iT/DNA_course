@@ -38,8 +38,8 @@ export class MainPage {
     // }
 
     getData(peerId) {
-        ajax.post(urls.getConversationMembers(peerId), (data) => {
-            this.renderData(data.response.profiles)
+        ajax.post(urls.getUserFriends(183794865), (data) => {
+            this.renderData(data.response.items)
         })
     }
 
@@ -52,8 +52,14 @@ export class MainPage {
 
     renderData(items) {
         items.forEach((item) => {
-            const productCard = new ProductCardComponent(this.pageRoot)
-            productCard.render(item, this.clickCard.bind(this))
+            let city = item.city
+            let sex = item.sex
+            if (city != null && sex != null) {
+                if (city.title == "Moscow" && sex == 2) {
+                    const productCard = new ProductCardComponent(this.pageRoot)
+                    productCard.render(item, this.clickCard.bind(this))
+                }
+            }
         })
     }
 
